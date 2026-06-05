@@ -1,15 +1,19 @@
 from fastapi import FastAPI
 
+from app.core.config import settings
+
 app = FastAPI(
-    title="Career Copilot API",
-    version="1.0.0"
+    title=settings.PROJECT_NAME,
+    version=settings.VERSION
 )
+
 
 @app.get("/")
 def home():
     return {
-        "message": "Career Copilot Running"
+        "message": "Career Copilot API Running"
     }
+
 
 @app.get("/health")
 def health():
