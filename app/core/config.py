@@ -5,7 +5,7 @@ class Settings(BaseSettings):
     PROJECT_NAME: str
     VERSION: str
     DATABASE_URL: str
-
+    GEMINI_API_KEY: str
     class Config:
         env_file = ".env"
 
