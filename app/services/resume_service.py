@@ -5,18 +5,26 @@ from sqlalchemy.orm import Session
 from app.models.resume import Resume
 
 
-def extract_resume_text(
-    file_path: str
-):
+def extract_resume_text(file_path: str):
 
     text = ""
 
     pdf = fitz.open(file_path)
 
-    for page in pdf:
-        text += page.get_text()
+    for page_num in range(len(pdf)):
 
-    return text
+        page = pdf.load_page(page_num)
+
+        page_text = page.get_text("text")
+
+        print("PAGE TEXT:")
+        print(page_text)
+
+        text += page_text
+
+    pdf.close()
+
+    return text.strip()
 
 
 def save_resume(

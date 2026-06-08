@@ -13,6 +13,11 @@ from app.services.resume_service import (
     extract_resume_text,
     save_resume
 )
+from app.models.resume import Resume
+
+from app.services.profile_service import (
+    analyze_resume_text
+)
 
 router = APIRouter(
     prefix="/resume",
@@ -54,3 +59,30 @@ async def upload_resume(
         "message":
         "Resume uploaded successfully"
     }
+@router.post(
+    "/analyze/{resume_id}"
+)
+def analyze_resume(
+    resume_id: int,
+    db: Session = Depends(get_db)
+):
+
+    resume = (
+        db.query(Resume)
+        .filter(
+            Resume.id == resume_id
+        )
+        .first()
+    )
+
+    if not resume:
+        return {
+            "error":
+            "Resume not found"
+        }
+
+    result = analyze_resume_text(
+        resume.extracted_text
+    )
+
+    return result    
