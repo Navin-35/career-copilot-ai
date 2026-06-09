@@ -7,6 +7,9 @@ from app.database.base import Base
 from app.api.resume_router import (
     router as resume_router
 )
+from app.api.career_router import (
+    router as career_router
+)
 import app.models
 
 Base.metadata.create_all(bind=engine)
@@ -18,6 +21,7 @@ app = FastAPI(
 app.include_router(user_router)
 app.include_router(auth_router)
 app.include_router(resume_router)
+app.include_router(career_router)
 @app.get("/")
 def home():
     return {
