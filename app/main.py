@@ -7,10 +7,10 @@ from app.database.base import Base
 from app.api.resume_router import (
     router as resume_router
 )
-from app.api.career_router import (
-    router as career_router
-)
+from app.api.career_router import (router as career_router)
 import app.models
+from app.api.roadmap_router import (router as roadmap_router)
+from app.api.chat_router import (router as chat_router)
 
 Base.metadata.create_all(bind=engine)
 
@@ -22,6 +22,9 @@ app.include_router(user_router)
 app.include_router(auth_router)
 app.include_router(resume_router)
 app.include_router(career_router)
+app.include_router(roadmap_router)
+app.include_router(chat_router)
+
 @app.get("/")
 def home():
     return {
