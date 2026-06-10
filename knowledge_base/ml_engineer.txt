@@ -1,0 +1,14 @@
+Machine Learning Engineer Roadmap
+
+Python
+NumPy
+Pandas
+Scikit-Learn
+TensorFlow
+PyTorch
+Docker
+Kubernetes
+MLOps
+AWS
+GCP
+Model Deployment

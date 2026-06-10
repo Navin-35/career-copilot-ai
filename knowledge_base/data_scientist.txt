@@ -1,0 +1,10 @@
+Data Scientist Roadmap
+
+Python
+Statistics
+Pandas
+NumPy
+SQL
+Machine Learning
+Data Visualization
+A/B Testing
