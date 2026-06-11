@@ -11,6 +11,9 @@ from app.api.career_router import (router as career_router)
 import app.models
 from app.api.roadmap_router import (router as roadmap_router)
 from app.api.chat_router import (router as chat_router)
+from app.api.copilot_router import (
+    router as copilot_router
+)
 
 Base.metadata.create_all(bind=engine)
 
@@ -24,6 +27,9 @@ app.include_router(resume_router)
 app.include_router(career_router)
 app.include_router(roadmap_router)
 app.include_router(chat_router)
+app.include_router(
+    copilot_router
+)
 
 @app.get("/")
 def home():
