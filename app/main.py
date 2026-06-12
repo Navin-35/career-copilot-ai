@@ -14,6 +14,9 @@ from app.api.chat_router import (router as chat_router)
 from app.api.copilot_router import (
     router as copilot_router
 )
+from app.api.copilot_chat_router import (
+    router as copilot_chat_router
+)
 
 Base.metadata.create_all(bind=engine)
 
@@ -29,6 +32,9 @@ app.include_router(roadmap_router)
 app.include_router(chat_router)
 app.include_router(
     copilot_router
+)
+app.include_router(
+    copilot_chat_router
 )
 
 @app.get("/")
