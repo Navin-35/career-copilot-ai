@@ -1,16 +1,28 @@
+import { Link } from "react-router-dom";
+
 export default function Navbar() {
 
   return (
+    <div className="bg-blue-600 text-white p-4 flex gap-6">
 
-    <div className="bg-blue-600 text-white p-4">
+      <Link to="/">Home</Link>
 
-      <h1 className="text-2xl font-bold">
+      <Link to="/upload">
+        Upload Resume
+      </Link>
 
-        Career Copilot
+      <Link to="/skill-gap">
+        Skill Gap
+      </Link>
 
-      </h1>
+      <Link to="/roadmap">
+        Roadmap
+      </Link>
+
+      <Link to="/chat">
+        Career Chat
+      </Link>
 
     </div>
-
   );
 }

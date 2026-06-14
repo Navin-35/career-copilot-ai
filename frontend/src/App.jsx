@@ -1,30 +1,22 @@
 import {
   BrowserRouter,
   Routes,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
+
+import Navbar from "./components/Navbar";
 
 import Home from "./pages/Home";
 import UploadResume from "./pages/UploadResume";
+import SkillGap from "./pages/SkillGap";
+import Roadmap from "./pages/Roadmap";
+import CareerChat from "./pages/CareerChat";
 
 function App() {
-
   return (
-
     <BrowserRouter>
 
-      <nav className="bg-blue-600 text-white p-4 flex gap-4">
-
-        <Link to="/">
-          Home
-        </Link>
-
-        <Link to="/upload">
-          Upload Resume
-        </Link>
-
-      </nav>
+      <Navbar />
 
       <Routes>
 
@@ -36,6 +28,21 @@ function App() {
         <Route
           path="/upload"
           element={<UploadResume />}
+        />
+
+        <Route
+          path="/skill-gap"
+          element={<SkillGap />}
+        />
+
+        <Route
+          path="/roadmap"
+          element={<Roadmap />}
+        />
+
+        <Route
+          path="/chat"
+          element={<CareerChat />}
         />
 
       </Routes>
