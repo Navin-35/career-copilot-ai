@@ -45,15 +45,15 @@ export default function CareerChat() {
 
   return (
 
-    <div className="p-8">
+    <div className="p-8 max-w-4xl mx-auto">
 
-      <h1 className="text-3xl font-bold mb-4">
+      <h1 className="text-4xl font-bold mb-6">
         AI Career Coach
       </h1>
 
       <textarea
         rows="5"
-        className="w-full border rounded p-3"
+        className="w-full border rounded-lg p-4 shadow-sm"
         placeholder="Ask your career question..."
         value={question}
         onChange={(e) =>
@@ -65,25 +65,30 @@ export default function CareerChat() {
 
       <button
         onClick={askQuestion}
-        className="bg-blue-600 text-white px-4 py-2 mt-4 rounded"
+        className="bg-blue-600 text-white px-6 py-3 mt-4 rounded-lg hover:bg-blue-700 transition"
       >
-        {loading ? "Thinking..." : "Ask AI"}
+        {loading
+          ? "Thinking..."
+          : "Ask AI"}
       </button>
 
       {answer && (
 
-        <div className="mt-6 border rounded p-4 bg-gray-100">
+        <div className="bg-gray-100 rounded-lg p-6 mt-6 shadow">
 
-          <h2 className="font-bold text-lg mb-2">
-            AI Response
+          <h2 className="text-xl font-bold text-blue-600">
+            AI Coach
           </h2>
 
-          <p>{answer}</p>
+          <p className="mt-4 whitespace-pre-wrap text-gray-800">
+            {answer}
+          </p>
 
         </div>
 
       )}
 
     </div>
+
   );
 }
