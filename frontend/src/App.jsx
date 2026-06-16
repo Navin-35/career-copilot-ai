@@ -11,7 +11,7 @@ import UploadResume from "./pages/UploadResume";
 import SkillGap from "./pages/SkillGap";
 import Roadmap from "./pages/Roadmap";
 import CareerChat from "./pages/CareerChat";
-
+import ResumeScore from "./pages/ResumeScore";
 function App() {
   return (
     <BrowserRouter>
@@ -43,6 +43,10 @@ function App() {
         <Route
           path="/chat"
           element={<CareerChat />}
+        />
+        <Route
+          path="/resume-score"
+          element={<ResumeScore />}
         />
 
       </Routes>

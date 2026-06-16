@@ -20,6 +20,10 @@ from app.api.copilot_chat_router import (
 from fastapi.middleware.cors import (
     CORSMiddleware
 )
+from app.api.resume_score_router import (
+    router as resume_score_router
+)
+
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
@@ -37,6 +41,9 @@ app.include_router(
 )
 app.include_router(
     copilot_chat_router
+)
+app.include_router(
+    resume_score_router
 )
 app.add_middleware(
     CORSMiddleware,

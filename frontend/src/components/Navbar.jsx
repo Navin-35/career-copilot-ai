@@ -22,6 +22,9 @@ export default function Navbar() {
       <Link to="/chat">
         Career Chat
       </Link>
+      <Link to="/resume-score">
+        Resume Score
+      </Link>
 
     </div>
   );

@@ -47,3 +47,17 @@ def save_resume(
     db.refresh(resume)
 
     return resume
+def get_resume(
+    db: Session,
+    resume_id: int
+):
+
+    return (
+        db.query(Resume)
+        .filter(
+            Resume.id == resume_id
+        )
+        .first()
+    )
+    
+    
